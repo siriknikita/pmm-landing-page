@@ -37,7 +37,10 @@ export function Hero() {
             <div className="absolute -inset-1 bg-blue-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
             <span className="relative">Get Started Free</span>
           </button>
-          <button className="relative group border border-gray-500 hover:border-blue-400 px-8 py-3 rounded-lg font-semibold transition-all duration-300 ease-out hover:scale-105">
+          <button 
+            className="relative group border border-gray-500 hover:border-blue-400 px-8 py-3 rounded-lg font-semibold transition-all duration-300 ease-out hover:scale-105"
+            onClick={() => window.open('https://poly-micro-frontend-demo.vercel.app/', '_blank')}
+          >
             <div className="absolute -inset-1 bg-blue-400 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
             <span className="relative">View Demo</span>
           </button>
