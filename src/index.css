@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  @apply bg-gray-900;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+/* Interactive Grid Background */
+.grid-background {
+  @apply transition-all duration-300;
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-position: center center;
+  transform-origin: center;
+  animation: gridPulse 20s ease-in-out infinite;
+}
+
+@keyframes gridPulse {
+  0%, 100% { 
+    opacity: 0.7;
+    background-size: 24px 24px;
+  }
+  50% { 
+    opacity: 0.9;
+    background-size: 26px 26px;
+  }
+}
+
+/* Grid Glow Effect */
+.grid-glow {
+  position: fixed;
+  pointer-events: none;
+  inset: 0;
+  background: radial-gradient(
+    800px circle at var(--x, 50%) var(--y, 50%),
+    rgba(59, 130, 246, 0.2),
+    transparent 40%
+  );
+  z-index: 1;
+  mix-blend-mode: screen;
+}
+
+/* Enhanced cursor effect */
+.cursor-glow {
+  position: fixed;
+  pointer-events: none;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(
+    circle at center,
+    rgba(59, 130, 246, 0.3),
+    transparent 70%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+
+/* Smooth Scroll Container */
+.snap-container {
+  height: 100vh;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.snap-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.snap-container::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+.snap-container::-webkit-scrollbar-thumb {
+  @apply bg-blue-500/50 rounded-full hover:bg-blue-400/50 transition-colors duration-300;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  height: 100vh;
+  position: relative;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Section transition effects */
+.snap-section {
+  opacity: 0.8;
+  transform: scale(0.99);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.snap-section:hover,
+.snap-section:target,
+.snap-section:focus-within,
+.snap-section.active {
+  opacity: 1;
+  transform: scale(1);
+}
