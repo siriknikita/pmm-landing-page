@@ -2,7 +2,7 @@ import React from 'react';
 
 export function Installation() {
   return (
-    <section className="snap-section flex items-center py-16">
+    <section className="snap-section flex items-center py-16" id="quick-installation">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-gray-800/50" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_50%,#3b82f630,transparent)]" />

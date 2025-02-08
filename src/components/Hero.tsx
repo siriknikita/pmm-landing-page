@@ -2,13 +2,20 @@ import React from 'react';
 import { Boxes } from 'lucide-react';
 
 export function Hero() {
+  const scrollToSection = () => {
+    const section = document.getElementById('quick-installation');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className="snap-section flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-gray-800/50" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_50%_200px,#3b82f630,transparent)]" />
       </div>
-      
+
       <div className="container mx-auto px-4 text-center">
         <div className="flex justify-center mb-6">
           <div className="relative group">
@@ -23,7 +30,10 @@ export function Hero() {
           Simplifying Microservice Orchestration Like Never Before
         </p>
         <div className="flex justify-center gap-4">
-          <button className="relative group bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 ease-out hover:scale-105">
+          <button
+            className="relative group bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 ease-out hover:scale-105"
+            onClick={scrollToSection}
+          >
             <div className="absolute -inset-1 bg-blue-500 rounded-lg blur opacity-0 group-hover:opacity-30 transition duration-500"></div>
             <span className="relative">Get Started Free</span>
           </button>
@@ -36,3 +46,4 @@ export function Hero() {
     </header>
   );
 }
+
