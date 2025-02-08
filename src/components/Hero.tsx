@@ -17,13 +17,15 @@ export function Hero() {
       </div>
 
       <div className="container mx-auto px-4 text-center">
-        <div className="flex justify-center mb-6">
+        <div className="flex justify-center mb-4">
           <div className="relative group">
             <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full blur opacity-0 group-hover:opacity-75 transition duration-500"></div>
             <Boxes className="relative w-16 h-16 text-blue-400 transform group-hover:scale-110 transition duration-500" />
           </div>
         </div>
-        <h1 className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+        <h1
+          className="text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+          style={{ lineHeight: '1.3' }}>
           PolyMicro Manager
         </h1>
         <p className="text-2xl text-gray-300 mb-8">
